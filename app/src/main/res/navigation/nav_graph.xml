@@ -10,4 +10,28 @@
         android:name="com.example.createrapp.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.example.createrapp.InicioFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_inicioFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actividadFragment"
+        android:name="com.example.createrapp.ActividadFragment"
+        android:label="fragment_actividad"
+        tools:layout="@layout/fragment_actividad" />
+    <fragment
+        android:id="@+id/comunidadesFragment"
+        android:name="com.example.createrapp.ComunidadesFragment"
+        android:label="fragment_comunidades"
+        tools:layout="@layout/fragment_comunidades" />
+    <fragment
+        android:id="@+id/nuevoDesafioFragment"
+        android:name="com.example.createrapp.NuevoDesafioFragment"
+        android:label="fragment_nuevo_desafio"
+        tools:layout="@layout/fragment_nuevo_desafio" />
 </navigation>

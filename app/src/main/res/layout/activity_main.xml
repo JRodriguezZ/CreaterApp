@@ -8,9 +8,10 @@
 
 
     <ImageView
-        android:id="@+id/perfil"
+        android:id="@+id/profilePicture"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:contentDescription="@string/profile_picture"
         android:padding="5dp"
         app:layout_constraintBottom_toTopOf="@id/navigation_fragment"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,20 +19,21 @@
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fadingEdge="horizontal"
         app:layout_constraintBottom_toTopOf="@id/navigation_fragment"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toLeftOf="@id/profilePicture"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/navigation_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:paddingEnd="8dp"
         android:paddingStart="8dp"
+        android:paddingEnd="8dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@id/bottom_nav_view"
         app:layout_constraintEnd_toEndOf="parent"

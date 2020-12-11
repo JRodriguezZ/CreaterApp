@@ -34,4 +34,9 @@
         android:name="com.example.createrapp.NuevoDesafioFragment"
         android:label="fragment_nuevo_desafio"
         tools:layout="@layout/fragment_nuevo_desafio" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.createrapp.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

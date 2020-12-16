@@ -5,5 +5,8 @@ public class Publicacion {
    String fecha;
    String multimedia;
    String dificultad;
+   String comentarios;
+   String likes;
+
 
 }

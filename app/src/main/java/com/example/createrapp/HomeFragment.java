@@ -3,13 +3,21 @@ package com.example.createrapp;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.createrapp.databinding.FragmentHomeBinding;
 import com.example.createrapp.databinding.ViewholderDesafioBinding;
 
 import java.util.List;
@@ -17,11 +25,35 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
+    private FragmentHomeBinding binding;
+    DesafiosViewModel desafiosViewModel;
+    NavController navController;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return (binding = FragmentHomeBinding.inflate(inflater, container, false)).getRoot();
+    }
+
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        desafiosViewModel = new ViewModelProvider(requireActivity()).get(DesafiosViewModel.class);
+
+        DesafiosAdapter desafiosAdapter;
+        desafiosAdapter = new DesafiosAdapter();
+
+        binding.recyclerView.setAdapter(desafiosAdapter);
+
+        binding.recyclerView.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
+
+        obtenerDesafios().observe(getViewLifecycleOwner(), new Observer<List<Desafio>>() {
+            @Override
+            public void onChanged(List<Desafio> desafios) {
+                desafiosAdapter.establecerLista(desafios);
+            }
+        });
+
     }
 
     class DesafioViewHolder extends RecyclerView.ViewHolder {
@@ -33,9 +65,13 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    LiveData<List<Desafio>> obtenerDesafios(){
+        return desafiosViewModel.obtener();
+    }
+
     class DesafiosAdapter extends RecyclerView.Adapter<DesafioViewHolder> {
 
-        List<Publicacion> desafios;
+        List<Desafio> desafios;
 
         @NonNull
         @Override
@@ -46,11 +82,19 @@ public class HomeFragment extends Fragment {
         @Override
         public void onBindViewHolder(@NonNull DesafioViewHolder holder, int position) {
 
-            Publicacion desafio = desafios.get(position);
+            Desafio desafio = desafios.get(position);
 
-            holder.binding.tituloDesafio.setText(desafio.titulo);
+            holder.binding.tituloDesafio.setText(desafio.titulo); //falta la foto
             holder.binding.descripcionDesafio.setText(desafio.descripcion);
             holder.binding.dificultadDesafio.setRating(desafio.dificultad);
+
+//            holder.itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    desafiosViewModel.seleccionar(desafio);
+//                    navController.navigate(R.id.action_mostrarDesafioFragment);
+//                }
+//            });
         }
 
         @Override
@@ -58,9 +102,22 @@ public class HomeFragment extends Fragment {
             return desafios != null ? desafios.size() : 0;
         }
 
-        public void establecerLista(List<Publicacion> desafios){
+        public void establecerLista(List<Desafio> desafios){
             this.desafios = desafios;
             notifyDataSetChanged();
+        }
+
+        public Desafio obtenerDesafio(int posicion){
+            return desafios.get(posicion);
+        }
+    }
+
+    static class ElementoViewHolder extends RecyclerView.ViewHolder {
+        private final ViewholderDesafioBinding binding;
+
+        public ElementoViewHolder(ViewholderDesafioBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
         }
     }
 }

@@ -26,13 +26,15 @@ public class MainActivity extends AppCompatActivity {
         Glide.with(this).load(R.drawable.profile_picture_example).circleCrop().into(binding.profilePicture); /* Imagen de perfil redondeada */
 
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
-            if (destination.getId() == R.id.nuevoDesafioFragment || destination.getId() == R.id.actividadFragment) {
+            if (destination.getId() == R.id.nuevoDesafioFragment
+                    || destination.getId() == R.id.actividadFragment) {
                 binding.searchView.setVisibility(View.GONE);
             } else {
                 binding.searchView.setVisibility(View.VISIBLE);
             }
 
-            if (destination.getId() == R.id.profileFragment) {
+            if (destination.getId() == R.id.profileFragment
+                    || destination.getId() == R.id.nuevoDesafioFragment) {
                 binding.profilePicture.setVisibility(View.GONE);
             } else {
                 binding.profilePicture.setVisibility(View.VISIBLE);
@@ -44,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
                 binding.bottomNavView.setVisibility(View.VISIBLE);
             }
 
-            if (destination.getId() == R.id.inicioFragment || destination.getId() == R.id.registroUsuarioFragment){
+            if (destination.getId() == R.id.inicioFragment
+                    || destination.getId() == R.id.registroUsuarioFragment){
                 binding.bottomNavView.setVisibility(View.GONE);
                 binding.profilePicture.setVisibility(View.GONE);
                 binding.searchView.setVisibility(View.GONE);

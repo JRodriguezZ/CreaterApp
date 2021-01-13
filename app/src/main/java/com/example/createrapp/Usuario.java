@@ -10,7 +10,6 @@ public class Usuario {
     String usuario;
 
     String profilePic;
-
     int nivel;
     String localidad;
     LocalDate fecha;
@@ -18,9 +17,8 @@ public class Usuario {
     String trucoFavorito;
 
     public enum Stance {
-        GOOFY, REGULAR;
+        REGULAR, GOOFY;
     }
-
 
     public Usuario(String nombre, String usuario) {
         this.nombre = nombre;

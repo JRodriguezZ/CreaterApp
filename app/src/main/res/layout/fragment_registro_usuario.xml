@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistroUsuarioFragment">
+
+
+    <EditText
+        android:id="@+id/nombreRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=" Nombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/usuarioRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/usuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombreRegistro" />
+
+    <EditText
+        android:id="@+id/localidadRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=" Localidad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usuarioRegistro" />
+    <EditText
+        android:id="@+id/fechaRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=" Fecha de nacimiento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/localidadRegistro" />
+    <EditText
+        android:id="@+id/trucoFavRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=" Truco davorito"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fechaRegistro" />
+
+    <Spinner
+        android:id="@+id/stanceSpinnerRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:background="@android:drawable/btn_dropdown"
+        app:layout_constraintTop_toBottomOf="@+id/trucoFavRegistro" />
+
+    <ImageView
+        android:id="@+id/imagenRegistro"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_baseline_insert_photo_24"
+        app:layout_constraintBottom_toTopOf="@+id/insertar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/insertar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="INSERTAR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

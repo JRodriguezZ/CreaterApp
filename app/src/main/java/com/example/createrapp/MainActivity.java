@@ -38,13 +38,13 @@ public class MainActivity extends AppCompatActivity {
                 binding.profilePicture.setVisibility(View.VISIBLE);
             }
 
-            if (destination.getId() == R.id.profileFragment || destination.getId() == R.id.registroUsuarioFragment) {
+            if (destination.getId() == R.id.profileFragment) {
                 binding.bottomNavView.setVisibility(View.GONE);
             } else {
                 binding.bottomNavView.setVisibility(View.VISIBLE);
             }
 
-            if (destination.getId() == R.id.inicioFragment){
+            if (destination.getId() == R.id.inicioFragment || destination.getId() == R.id.registroUsuarioFragment){
                 binding.bottomNavView.setVisibility(View.GONE);
                 binding.profilePicture.setVisibility(View.GONE);
                 binding.searchView.setVisibility(View.GONE);

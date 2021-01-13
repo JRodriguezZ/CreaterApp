@@ -4,7 +4,8 @@ public class Publicacion {
    String titulo;
    String fecha;
    String multimedia;
-   String dificultad;
+   String descripcion;
+   Float dificultad;
    String comentarios;
    String likes;
 

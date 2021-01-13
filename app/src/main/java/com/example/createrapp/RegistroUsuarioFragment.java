@@ -29,6 +29,7 @@ public class RegistroUsuarioFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        // Dropdown menu stances --
 //        Spinner dropdown = binding.stanceSpinnerRegistro;
 //        String[] stances = new String[]{"Regular", "Goofy"};
 //        ArrayAdapter<> adapter = new ArrayAdapter<>(this, R.id.stanceSpinnerRegistro, stances);

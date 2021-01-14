@@ -1,6 +1,7 @@
 package com.example.createrapp;
 
 import android.app.Application;
+import android.net.Uri;
 
 import androidx.annotation.NonNull;
 import androidx.arch.core.util.Function;
@@ -25,6 +26,8 @@ public class DesafiosViewModel extends AndroidViewModel {
             return desafiosAdministrador.buscar(input);
         }
     });
+
+    MutableLiveData<Uri> imagenSeleccionada = new MutableLiveData<>();
 
     public DesafiosViewModel(@NonNull Application app) {
         super(app);
@@ -74,4 +77,6 @@ public class DesafiosViewModel extends AndroidViewModel {
     void establecerTerminoBusqueda(String s){
         terminoBusqueda.setValue(s);
     }
+
+    void establecerImagenSeleccionada(Uri uri){ imagenSeleccionada.setValue(uri); }
 }

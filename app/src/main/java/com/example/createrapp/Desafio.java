@@ -12,14 +12,15 @@ public class Desafio {
    String fecha;
    String multimedia;
    String descripcion;
-   Float dificultad;
+   float dificultad;
    String comentarios;
-   String likes;
+   int likes;
 
-   public Desafio(String titulo, String descripcion, float dificultad) {
+   public Desafio(String titulo, String descripcion, float dificultad, String multimedia) {
       this.titulo = titulo;
       this.descripcion = descripcion;
       this.dificultad = dificultad;
+      this.multimedia = multimedia;
    }
 
 }

@@ -17,32 +17,26 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.List;
 
 @Database(entities = {Desafio.class}, version = 1, exportSchema = false)
+
 public abstract class DesafiosDatabase extends RoomDatabase {
 
     public abstract DesafiosDao obtenerDesafiosDao();
 
-    private static volatile DesafiosDatabase INSTANCIA;
+    private static volatile DesafiosDatabase DB;
 
     static DesafiosDatabase obtenerInstancia(final Context context) {
-        if (INSTANCIA == null) {
+        if (DB == null) {
             synchronized (DesafiosDatabase.class) {
-                if (INSTANCIA == null) {
-                    INSTANCIA = Room.databaseBuilder(context,
-                            DesafiosDatabase.class, "elementos.db")
+                if (DB == null) {
+                    DB = Room.databaseBuilder(context, DesafiosDatabase.class, "desafios.db")
                             .fallbackToDestructiveMigration()
-                            .addCallback(new Callback() {
-                                @Override
-                                public void onCreate(@NonNull SupportSQLiteDatabase db) {
-                                    super.onCreate(db);
-
-                                }
-                            })
                             .build();
                 }
             }
         }
-        return INSTANCIA;
+        return DB;
     }
+
     @Dao
     interface DesafiosDao {
         @Query("SELECT * FROM Desafio")
@@ -66,4 +60,5 @@ public abstract class DesafiosDatabase extends RoomDatabase {
         @Query("SELECT * FROM Desafio WHERE titulo LIKE '%' || :d || '%'")
         LiveData<List<Desafio>> buscar(String d);
     }
+
 }

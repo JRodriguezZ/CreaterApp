@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.example.createrapp.databinding.FragmentHomeBinding;
 import com.example.createrapp.databinding.ViewholderDesafioBinding;
 
@@ -84,7 +85,8 @@ public class HomeFragment extends Fragment {
 
             Desafio desafio = desafios.get(position);
 
-            holder.binding.tituloDesafio.setText(desafio.titulo); //falta la foto
+            holder.binding.tituloDesafio.setText(desafio.titulo);
+            Glide.with(holder.itemView).load(desafio.multimedia).into(holder.binding.imagenDesafio);
             holder.binding.descripcionDesafio.setText(desafio.descripcion);
             holder.binding.dificultadDesafio.setRating(desafio.dificultad);
 

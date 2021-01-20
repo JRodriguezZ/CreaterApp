@@ -1,9 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginFragment">
+    tools:context=".RegistroUsuarioFragment">
+
+    <com.jgabrielfreitas.core.BlurImageView
+        android:id="@+id/backgroundLogin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/eric_koston_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:radius="5" />
 
 
-</FrameLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:text="LOGIN"
+        android:textColor="@color/Black"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/nombreRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Correo / Usuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/usuarioRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Contraseña"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombreRegistro" />
+
+
+    <ImageView
+        android:id="@+id/googleIcon"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/layout_bg_icons"
+        android:src="@drawable/icon_google"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usuarioRegistro" />
+
+    <ImageView
+        android:id="@+id/facebookIcon"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/icon_facebook"
+        app:layout_constraintEnd_toStartOf="@+id/registerIcon"
+        app:layout_constraintStart_toEndOf="@+id/googleIcon"
+        app:layout_constraintTop_toBottomOf="@+id/usuarioRegistro" />
+
+    <ImageView
+        android:id="@+id/registerIcon"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="64dp"
+        android:src="@drawable/layout_bg_icons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usuarioRegistro" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/DodgerBlue"
+        android:text="LOGIN"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/googleIcon" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGISTER"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/registerIcon"
+        app:layout_constraintEnd_toEndOf="@+id/registerIcon"
+        app:layout_constraintStart_toStartOf="@+id/registerIcon"
+        app:layout_constraintTop_toTopOf="@+id/registerIcon" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,8 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 binding.searchView.setVisibility(View.VISIBLE);
             }
 
-            if (destination.getId() == R.id.profileFragment
-                    || destination.getId() == R.id.nuevoDesafioFragment) {
+            if (destination.getId() == R.id.profileFragment) {
                 binding.profilePicture.setVisibility(View.GONE);
             } else {
                 binding.profilePicture.setVisibility(View.VISIBLE);
@@ -47,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (destination.getId() == R.id.inicioFragment
-                    || destination.getId() == R.id.registroUsuarioFragment){
+                    || destination.getId() == R.id.registroUsuarioFragment
+                    || destination.getId() == R.id.loginFragment){
                 binding.bottomNavView.setVisibility(View.GONE);
                 binding.profilePicture.setVisibility(View.GONE);
                 binding.searchView.setVisibility(View.GONE);

@@ -41,6 +41,7 @@ public class NuevoDesafioFragment extends Fragment {
 
         binding.botonPublicarNuevoDesafio.setOnClickListener(v -> {
             if (imagenSeleccionada != null) {
+
             String nombre = binding.tituloNuevoDesafio.getText().toString();
             String descripcion = binding.descripcionNuevoDesafio.getText().toString();
             float dificultad = binding.dificultadNuevoDesafio.getRating();
@@ -50,6 +51,8 @@ public class NuevoDesafioFragment extends Fragment {
             desafiosViewModel.establecerImagenSeleccionada(null);
 
             navController.popBackStack();
+
+            navController.navigate(R.id.homeFragment);
         } else {
             Toast.makeText(requireContext(), "Seleccione una imagen", Toast.LENGTH_SHORT).show();
         }
@@ -65,9 +68,13 @@ public class NuevoDesafioFragment extends Fragment {
                 Glide.with(requireView()).load(uri).into(binding.imagenNuevoDesafio);
             }
         });
+
     }
 
     private final ActivityResultLauncher<String> lanzadorGaleria = registerForActivityResult(new ActivityResultContracts.GetContent(), uri -> {
         desafiosViewModel.establecerImagenSeleccionada(uri);
     });
+
+
+
 }

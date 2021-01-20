@@ -27,35 +27,33 @@ public class MainActivity extends AppCompatActivity {
 
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
             if (destination.getId() == R.id.nuevoDesafioFragment
-                    || destination.getId() == R.id.actividadFragment) {
-                binding.searchView.setVisibility(View.GONE);
-            } else {
-                binding.searchView.setVisibility(View.VISIBLE);
-            }
-
-            if (destination.getId() == R.id.profileFragment) {
-                binding.profilePicture.setVisibility(View.GONE);
-            } else {
-                binding.profilePicture.setVisibility(View.VISIBLE);
-            }
-
-            if (destination.getId() == R.id.profileFragment) {
-                binding.bottomNavView.setVisibility(View.GONE);
-            } else {
-                binding.bottomNavView.setVisibility(View.VISIBLE);
-            }
-
-            if (destination.getId() == R.id.inicioFragment
+                    || destination.getId() == R.id.actividadFragment
+                    || destination.getId() == R.id.inicioFragment
                     || destination.getId() == R.id.registroUsuarioFragment
-                    || destination.getId() == R.id.loginFragment){
-                binding.bottomNavView.setVisibility(View.GONE);
-                binding.profilePicture.setVisibility(View.GONE);
+                    || destination.getId() == R.id.loginFragment) {
                 binding.searchView.setVisibility(View.GONE);
-            } else{
-                binding.bottomNavView.setVisibility(View.VISIBLE);
-                binding.profilePicture.setVisibility(View.VISIBLE);
+            } else {
                 binding.searchView.setVisibility(View.VISIBLE);
             }
+
+            if (destination.getId() == R.id.profileFragment
+                    || destination.getId() == R.id.inicioFragment
+                    || destination.getId() == R.id.registroUsuarioFragment
+                    || destination.getId() == R.id.loginFragment) {
+                binding.profilePicture.setVisibility(View.GONE);
+            } else {
+                binding.profilePicture.setVisibility(View.VISIBLE);
+            }
+
+            if (destination.getId() == R.id.profileFragment
+                    || destination.getId() == R.id.inicioFragment
+                    || destination.getId() == R.id.registroUsuarioFragment
+                    || destination.getId() == R.id.loginFragment) {
+                binding.bottomNavView.setVisibility(View.GONE);
+            } else {
+                binding.bottomNavView.setVisibility(View.VISIBLE);
+            }
+
         });
 
         binding.profilePicture.setOnClickListener(v -> {

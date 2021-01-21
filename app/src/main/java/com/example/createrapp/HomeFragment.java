@@ -12,6 +12,7 @@ import androidx.navigation.NavController;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.adapter.FragmentViewHolder;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -85,6 +86,7 @@ public class HomeFragment extends Fragment {
 
             Desafio desafio = desafios.get(position);
 
+            Glide.with(holder.itemView).load(R.drawable.profile_picture_example).circleCrop().into(holder.binding.profilePictureDesafio);
             holder.binding.tituloDesafio.setText(desafio.titulo);
             Glide.with(holder.itemView).load(desafio.multimedia).into(holder.binding.imagenDesafio);
             holder.binding.descripcionDesafio.setText(desafio.descripcion);

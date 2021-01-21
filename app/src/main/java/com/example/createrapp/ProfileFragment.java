@@ -29,7 +29,7 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Glide.with(this).load(R.drawable.profile_picture_example).circleCrop().into(binding.profilePictureBig); /* Imagen de perfil redondeada */
+        Glide.with(this).load(R.drawable.profile_picture_example).circleCrop().into(binding.profilePicturePerfil); /* Imagen de perfil redondeada */
 
     }
 }

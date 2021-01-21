@@ -8,7 +8,7 @@
 
     <com.jgabrielfreitas.core.BlurImageView
         android:id="@+id/backgroundLogin"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/eric_koston_background"

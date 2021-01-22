@@ -8,21 +8,21 @@
 
 
     <ScrollView
+        android:id="@+id/scrollViewPerfil"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp">
 
             <ImageView
                 android:id="@+id/profilePicturePerfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="40dp"
                 android:contentDescription="@string/profile_picture"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -77,12 +77,40 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nombrePerfil" />
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/editarBotonPerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="16dp"
+                app:srcCompat="@drawable/ic_baseline_edit_24"
+                android:backgroundTint="@color/dodgerblue"
+                app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!--            <ImageButton-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="12dp"-->
+            <!--                android:background="@drawable/circle"-->
+            <!--                android:padding="12dp"-->
+            <!--                android:src="@drawable/ic_baseline_edit_24"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linearLayout"/>
             <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
+                android:layout_margin="32dp"
                 android:background="@drawable/rectangle"
                 android:orientation="vertical"
                 android:padding="15dp"
@@ -91,49 +119,86 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/usuarioPerfil">
 
-
                 <TextView
                     android:id="@+id/localidadPerfilText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Localidad" />
+
                 <TextView
                     android:id="@+id/localidadPerfil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
+
                 <TextView
                     android:id="@+id/fechaPerfilText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fecha" />
+                    android:text="Edad" />
+
                 <TextView
                     android:id="@+id/fechaPerfil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
+
                 <TextView
                     android:id="@+id/stancePerfilText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Stance" />
+
                 <TextView
                     android:id="@+id/stancePerfil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
+
                 <TextView
                     android:id="@+id/trucoPerfilText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Truco Favorito" />
+                    android:text="Truco favorito" />
+
                 <TextView
                     android:id="@+id/trucoPerfil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-            </LinearLayout>
+                <TextView
+                    android:id="@+id/skaterPerfilText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Skater favorito" />
 
+                <TextView
+                    android:id="@+id/skaterPerfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/skateparkPerfilText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Skatepark local" />
+
+                <TextView
+                    android:id="@+id/skateparkPerfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <ImageView
+        android:id="@+id/backPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:src="@drawable/ic_baseline_keyboard_backspace_24"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

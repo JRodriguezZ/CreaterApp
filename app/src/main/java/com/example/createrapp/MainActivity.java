@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
                     || destination.getId() == R.id.actividadFragment
                     || destination.getId() == R.id.inicioFragment
                     || destination.getId() == R.id.registroUsuarioFragment
-                    || destination.getId() == R.id.loginFragment) {
+                    || destination.getId() == R.id.loginFragment
+                    || destination.getId() == R.id.profileFragment) {
                 binding.searchView.setVisibility(View.GONE);
             } else {
                 binding.searchView.setVisibility(View.VISIBLE);

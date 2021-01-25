@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.example.createrapp.databinding.ActivityMainBinding;
 import com.example.createrapp.databinding.FragmentInicioBinding;
 
@@ -36,5 +37,8 @@ public class InicioFragment extends Fragment {
         binding.continuar.setOnClickListener(v -> {
             navController.navigate(R.id.action_inicioFragment_to_homeFragment);
         });
+
+        Glide.with(this).load(R.drawable.profile_picture_example).circleCrop().into(binding.profilePictureInicio); /* Imagen de perfil redondeada */
+
     }
 }

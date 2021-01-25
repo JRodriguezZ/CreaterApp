@@ -13,13 +13,13 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="60dp">
 
-
-            <LinearLayout
-                android:id="@+id/linear1Inicio"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint1Inicio"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="125dp"
                 android:orientation="horizontal"
                 android:layout_marginVertical="2dp"
                 android:background="@drawable/layout_bg_icons"
@@ -28,19 +28,57 @@
                 app:layout_constraintTop_toBottomOf="@+id/bienvenidoTextInicio">
 
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/eric_koston_background"/>
-
-                <TextView
+                    android:id="@+id/profilePictureInicio"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="ALALALALLALALALAALLALALA" />
+                    android:layout_margin="10dp"
+                    android:contentDescription="@string/profile_picture"
+                    android:padding="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            </LinearLayout>
+                <TextView
+                    android:id="@+id/nombreApellidoInicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre Apellido"
+                    android:textSize="20dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/profilePictureInicio"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
-                android:id="@+id/linear2Inicio"
+                <TextView
+                    android:id="@+id/usuarioInicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 󠀀 @usuario"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/nivelInicio"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/profilePictureInicio"
+                    app:layout_constraintTop_toBottomOf="@+id/nombreApellidoInicio" />
+
+
+                <TextView
+                    android:id="@+id/nivelInicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nivel 000"
+                    android:textSize="25dp"
+                    android:layout_marginBottom="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/profilePictureInicio" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint2Inicio"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:orientation="horizontal"
@@ -48,10 +86,57 @@
                 android:background="@drawable/layout_bg_icons"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linear1Inicio" />
+                app:layout_constraintTop_toBottomOf="@+id/constraint1Inicio">
 
-            <LinearLayout
-                android:id="@+id/linear3Inicio"
+                <ImageView
+                    android:id="@+id/imagenPublicacionDestacadaInicio"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/eric_koston_background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textoDestacadaInicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="PUBLICACIÓN\nDESTACADA"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/contadorLikesInicio"
+                    app:layout_constraintStart_toEndOf="@+id/imagenPublicacionDestacadaInicio"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/contadorLikesInicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="7dp"
+                    android:gravity="center"
+                    android:text="200"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:src="@drawable/ic_baseline_thumb_up_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:rotationY="-174"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint3Inicio"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:orientation="horizontal"
@@ -59,7 +144,81 @@
                 android:background="@drawable/layout_bg_icons"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linear2Inicio" />
+                app:layout_constraintTop_toBottomOf="@+id/constraint2Inicio">
+
+                <TextView
+                    android:id="@+id/textoDestacadaInicio2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:text="TU PUBLICACIÓN\nSE HA VISTO"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/space"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imagenPublicacionVistaInicio"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/contadorVisualizInicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="right"
+                    android:text="0000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.45"
+                    app:layout_constraintStart_toEndOf="@+id/imagenPublicacionVistaInicio"
+                    app:layout_constraintTop_toBottomOf="@+id/space" />
+
+                <ImageView
+                    android:id="@+id/imagenPublicacionVistaInicio"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/eric_koston_background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/ic_baseline_remove_red_eye_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/contadorVisualizInicio"
+                    app:layout_constraintTop_toBottomOf="@+id/space" />
+
+                <Space
+                    android:id="@+id/space"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint4Inicio"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal"
+                android:layout_marginVertical="2dp"
+                android:background="@drawable/layout_bg_icons"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraint3Inicio">
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <TextView
                 android:id="@+id/bienvenidoTextInicio"
@@ -68,13 +227,15 @@
                 android:layout_marginVertical="10dp"
                 android:text="BIENVENIDO"
                 android:textSize="35dp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+
+        </ScrollView>
 
     <Button
         android:id="@+id/continuar"
@@ -88,4 +249,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

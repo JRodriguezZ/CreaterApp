@@ -37,12 +37,6 @@ public class RegistroUsuarioFragment extends Fragment {
             navController.navigate(R.id.action_registroUsuarioFragment_to_inicioFragment);
         });
 
-        // Dropdown menu stances --
-//        Spinner dropdown = binding.stanceSpinnerRegistro;
-//        String[] stances = new String[]{"Regular", "Goofy"};
-//        ArrayAdapter<> adapter = new ArrayAdapter<>(this, R.id.stanceSpinnerRegistro, stances);
-//        dropdown.setAdapter(adapter);
-//
-//        binding.
+
     }
 }

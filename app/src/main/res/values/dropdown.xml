@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="stance_prompt">Selecciona una stance</string>
+
+    <string-array name="stance_arrays">
+        <item>Regular</item>
+        <item>Goofy</item>
+    </string-array>
+</resources>

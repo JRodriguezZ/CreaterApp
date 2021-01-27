@@ -10,7 +10,8 @@
     <ScrollView
         android:id="@+id/scrollViewPerfil"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbarSize="0dp" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -21,9 +22,8 @@
                 android:id="@+id/profilePicturePerfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
+                android:layout_marginHorizontal="80dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="40dp"
                 android:contentDescription="@string/profile_picture"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -106,6 +106,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/linearLayout"/>
+
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
@@ -123,67 +124,90 @@
                     android:id="@+id/localidadPerfilText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Localidad" />
+                    android:text="Localidad"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"/>
 
                 <TextView
                     android:id="@+id/localidadPerfil"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="Santa Coloma de Gramenet"
+                    android:layout_marginBottom="10dp"/>
 
                 <TextView
                     android:id="@+id/fechaPerfilText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Edad" />
+                    android:text="Edad"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp" />
 
                 <TextView
                     android:id="@+id/fechaPerfil"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:layout_marginBottom="10dp" />
 
                 <TextView
                     android:id="@+id/stancePerfilText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Stance" />
+                    android:text="Stance"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp" />
 
                 <TextView
                     android:id="@+id/stancePerfil"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="Regular"
+                    android:layout_marginBottom="10dp" />
 
                 <TextView
                     android:id="@+id/trucoPerfilText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Truco favorito" />
+                    android:text="Truco favorito"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp" />
 
                 <TextView
                     android:id="@+id/trucoPerfil"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="Bigspin"
+                    android:layout_marginBottom="10dp" />
 
                 <TextView
                     android:id="@+id/skaterPerfilText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Skater favorito" />
+                    android:text="Skater favorito"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp" />
 
                 <TextView
                     android:id="@+id/skaterPerfil"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="Chris Joslin"
+                    android:layout_marginBottom="10dp" />
 
                 <TextView
                     android:id="@+id/skateparkPerfilText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Skatepark local" />
+                    android:text="Skatepark local"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp" />
 
                 <TextView
                     android:id="@+id/skateparkPerfil"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp" />
 
 
             </LinearLayout>

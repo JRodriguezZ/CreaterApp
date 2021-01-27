@@ -32,13 +32,31 @@ public class InicioFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        Glide.with(this).load(R.drawable.profile_picture_example).circleCrop().into(binding.profilePictureInicio);
+        Glide.with(this).load(R.drawable.eric_koston_background).circleCrop().into(binding.comunidadPictureInicio);
+
         navController = Navigation.findNavController(view);
+
+        binding.constraint1Inicio.setOnClickListener(v -> {
+            navController.navigate(R.id.action_inicioFragment_to_profileFragment);
+        });
+
+        binding.constraint2Inicio.setOnClickListener(v -> {
+            navController.navigate(R.id.action_inicioFragment_to_homeFragment);
+        });
+
+        binding.constraint3Inicio.setOnClickListener(v -> {
+            navController.navigate(R.id.action_inicioFragment_to_actividadFragment);
+        });
+
+        binding.constraint4Inicio.setOnClickListener(v -> {
+            navController.navigate(R.id.action_inicioFragment_to_comunidadesFragment);
+        });
 
         binding.continuar.setOnClickListener(v -> {
             navController.navigate(R.id.action_inicioFragment_to_homeFragment);
         });
 
-        Glide.with(this).load(R.drawable.profile_picture_example).circleCrop().into(binding.profilePictureInicio); /* Imagen de perfil redondeada */
 
     }
 }

@@ -16,7 +16,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.List;
 
-@Database(entities = {Desafio.class}, version = 1, exportSchema = false)
+@Database(entities = {Desafio.class}, version = 2, exportSchema = false)
 
 public abstract class DesafiosDatabase extends RoomDatabase {
 

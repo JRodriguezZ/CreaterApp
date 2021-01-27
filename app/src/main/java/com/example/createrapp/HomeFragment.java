@@ -42,18 +42,19 @@ public class HomeFragment extends Fragment {
 
         desafiosViewModel = new ViewModelProvider(requireActivity()).get(DesafiosViewModel.class);
 
-        DesafiosAdapter desafiosAdapter;
-        desafiosAdapter = new DesafiosAdapter();
+        DesafiosAdapter desafiosAdapter = new DesafiosAdapter();
 
         binding.recyclerView.setAdapter(desafiosAdapter);
 
         binding.recyclerView.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
 
-        obtenerDesafios().observe(getViewLifecycleOwner(), new Observer<List<Desafio>>() {
-            @Override
-            public void onChanged(List<Desafio> desafios) {
-                desafiosAdapter.establecerLista(desafios);
+        obtenerDesafios().observe(getViewLifecycleOwner(), desafios -> {
+            if(desafios.size() == 0){
+                binding.emptyListText.setVisibility(View.VISIBLE);
+            } else {
+                binding.emptyListText.setVisibility(View.GONE);
             }
+            desafiosAdapter.establecerLista(desafios);
         });
 
     }
@@ -83,7 +84,6 @@ public class HomeFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(@NonNull DesafioViewHolder holder, int position) {
-
             Desafio desafio = desafios.get(position);
 
             Glide.with(holder.itemView).load(R.drawable.profile_picture_example).circleCrop().into(holder.binding.profilePictureDesafio);
@@ -109,19 +109,6 @@ public class HomeFragment extends Fragment {
         public void establecerLista(List<Desafio> desafios){
             this.desafios = desafios;
             notifyDataSetChanged();
-        }
-
-        public Desafio obtenerDesafio(int posicion){
-            return desafios.get(posicion);
-        }
-    }
-
-    static class ElementoViewHolder extends RecyclerView.ViewHolder {
-        private final ViewholderDesafioBinding binding;
-
-        public ElementoViewHolder(ViewholderDesafioBinding binding) {
-            super(binding.getRoot());
-            this.binding = binding;
         }
     }
 }

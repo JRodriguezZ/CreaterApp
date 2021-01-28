@@ -167,7 +167,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/constraint2Inicio">
 
                 <ImageView
-                    android:id="@+id/backgroundConstraint1"
+                    android:id="@+id/backgroundConstraint3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/layout_bg_icons"
@@ -258,7 +258,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/comunidadPicture1"
+                    android:id="@+id/comunidadPictureInicio"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
@@ -275,7 +275,7 @@
                     android:text="Comprueba las novedades\nde tus comunidades!"
                     android:textSize="16sp"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/comunidadPicture1"
+                    app:layout_constraintStart_toEndOf="@id/comunidadPictureInicio"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
 

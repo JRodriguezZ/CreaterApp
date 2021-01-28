@@ -33,7 +33,7 @@ public class InicioFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Glide.with(this).load(R.drawable.profile_picture_example).circleCrop().into(binding.profilePictureInicio);
-        Glide.with(this).load(R.drawable.eric_koston_background).circleCrop().into(binding.comunidadPictureInicio);
+        Glide.with(this).load(R.drawable.community_logo_example).circleCrop().into(binding.comunidadPictureInicio);
 
         navController = Navigation.findNavController(view);
 

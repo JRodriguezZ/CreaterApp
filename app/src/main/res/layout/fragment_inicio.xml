@@ -23,10 +23,20 @@
                 android:layout_height="125dp"
                 android:orientation="horizontal"
                 android:layout_marginVertical="2dp"
-                android:background="@drawable/layout_bg_icons"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bienvenidoTextInicio">
+
+                <ImageView
+                    android:id="@+id/backgroundConstraint1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/layout_bg_icons"
+                    android:alpha="0.3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/profilePictureInicio"
@@ -84,10 +94,20 @@
                 android:layout_height="150dp"
                 android:orientation="horizontal"
                 android:layout_marginVertical="2dp"
-                android:background="@drawable/layout_bg_icons"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraint1Inicio">
+
+                <ImageView
+                    android:id="@+id/backgroundConstraint2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/layout_bg_icons"
+                    android:alpha="0.3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/imagenPublicacionDestacadaInicio"
@@ -142,13 +162,23 @@
                 android:layout_height="150dp"
                 android:orientation="horizontal"
                 android:layout_marginVertical="2dp"
-                android:background="@drawable/layout_bg_icons"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraint2Inicio">
 
+                <ImageView
+                    android:id="@+id/backgroundConstraint1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/layout_bg_icons"
+                    android:alpha="0.3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <TextView
-                    android:id="@+id/textoDestacadaInicio2"
+                    android:id="@+id/nombreComunidad1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -161,7 +191,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/contadorVisualizInicio"
+                    android:id="@+id/contadorMiembrosComunidad1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
@@ -191,7 +221,7 @@
                     android:layout_marginBottom="16dp"
                     android:src="@drawable/ic_baseline_remove_red_eye_24"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/contadorVisualizInicio"
+                    app:layout_constraintStart_toEndOf="@+id/contadorMiembrosComunidad1"
                     app:layout_constraintTop_toBottomOf="@+id/space" />
 
                 <Space
@@ -212,13 +242,23 @@
                 android:layout_height="150dp"
                 android:orientation="horizontal"
                 android:layout_marginVertical="2dp"
-                android:background="@drawable/layout_bg_icons"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraint3Inicio">
 
                 <ImageView
-                    android:id="@+id/comunidadPictureInicio"
+                    android:id="@+id/backgroundConstraint4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/layout_bg_icons"
+                    android:alpha="0.3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/comunidadPicture1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
@@ -227,6 +267,17 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Comprueba las novedades\nde tus comunidades!"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/comunidadPicture1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
 
 
 

@@ -6,49 +6,63 @@
     android:layout_height="match_parent"
     tools:context=".FriendsFragment">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/amigosTextFriends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AMIGOS"
+        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView2">
+        app:layout_constraintTop_toBottomOf="@+id/searchViewFriends" />
 
-        <LinearLayout
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amigosTextFriends">
+
+        <ExpandableListView
+            android:id="@+id/connectedViewListFriends"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent" />
 
-            <ExpandableListView
-                android:id="@+id/connectedViewListFriends"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+    </LinearLayout>
 
-            <ExpandableListView
-                android:id="@+id/disconnectedViewListFriends"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-        </LinearLayout>
-    </ScrollView>
 
     <SearchView
-        android:id="@+id/searchView2"
+        android:id="@+id/searchViewFriends"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/backPerfil"
+        app:layout_constraintBottom_toBottomOf="@+id/backFriends"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/backPerfil"
+        app:layout_constraintStart_toEndOf="@+id/backFriends"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/backPerfil"
+        android:id="@+id/backFriends"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:src="@drawable/ic_baseline_keyboard_backspace_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/anyadirAmigoBoton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/dodgerblue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_add_24" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

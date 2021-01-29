@@ -7,6 +7,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +28,8 @@ import java.util.Map;
 
 public class FriendsFragment extends Fragment {
     private FragmentFriendsBinding binding;
+    private NavController navController;
+
     private ExpandableListView expandableListView;
     private ExpListAdapter adapter;
     private ArrayList<String> listCategorias = new ArrayList<>();
@@ -41,6 +45,9 @@ public class FriendsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        navController = Navigation.findNavController(view);
+
 
         ArrayList<String> listAmigosConectados = new ArrayList<>();
         ArrayList<String> listAmigosDesconectados = new ArrayList<>();
@@ -70,8 +77,15 @@ public class FriendsFragment extends Fragment {
 
         adapter = new ExpListAdapter(listCategorias, mapChild);
 
-        expandableListView.setAdapter(adapter);
+        binding.connectedViewListFriends.setAdapter(adapter);
 
+        binding.backFriends.setOnClickListener(v ->
+                navController.popBackStack()
+        );
+
+        binding.anyadirAmigoBoton.setOnClickListener(v ->
+            navController.navigate(R.id.anyadirAmigoFragment)
+        );
     }
 }
 

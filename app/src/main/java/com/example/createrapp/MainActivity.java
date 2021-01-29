@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
                     || destination.getId() == R.id.loginFragment
                     || destination.getId() == R.id.profileFragment
                     || destination.getId() == R.id.friendsFragment
-                    || destination.getId() == R.id.miComunidadFragment) {
+                    || destination.getId() == R.id.miComunidadFragment
+                    || destination.getId() == R.id.anyadirAmigoFragment) {
                 binding.searchView.setVisibility(View.GONE);
             } else {
                 binding.searchView.setVisibility(View.VISIBLE);
@@ -43,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
                     || destination.getId() == R.id.inicioFragment
                     || destination.getId() == R.id.registroUsuarioFragment
                     || destination.getId() == R.id.loginFragment
-                    || destination.getId() == R.id.friendsFragment) {
+                    || destination.getId() == R.id.friendsFragment
+                    || destination.getId() == R.id.anyadirAmigoFragment) {
                 binding.profilePicture.setVisibility(View.GONE);
             } else {
                 binding.profilePicture.setVisibility(View.VISIBLE);
@@ -53,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
                     || destination.getId() == R.id.inicioFragment
                     || destination.getId() == R.id.registroUsuarioFragment
                     || destination.getId() == R.id.loginFragment
-                    || destination.getId() == R.id.friendsFragment) {
+                    || destination.getId() == R.id.friendsFragment
+                    || destination.getId() == R.id.anyadirAmigoFragment) {
                 binding.friendTab.setVisibility(View.GONE);
             } else {
                 binding.friendTab.setVisibility(View.VISIBLE);
@@ -63,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
                     || destination.getId() == R.id.inicioFragment
                     || destination.getId() == R.id.registroUsuarioFragment
                     || destination.getId() == R.id.loginFragment
-                    || destination.getId() == R.id.friendsFragment) {
+                    || destination.getId() == R.id.friendsFragment
+                    || destination.getId() == R.id.anyadirAmigoFragment) {
                 binding.bottomNavView.setVisibility(View.GONE);
             } else {
                 binding.bottomNavView.setVisibility(View.VISIBLE);

@@ -103,10 +103,19 @@
         android:id="@+id/friendsFragment"
         android:name="com.example.createrapp.FriendsFragment"
         android:label="fragment_friends"
-        tools:layout="@layout/fragment_friends" />
+        tools:layout="@layout/fragment_friends" >
+        <action
+            android:id="@+id/action_friendsFragment_to_anyadirAmigoFragment"
+            app:destination="@id/anyadirAmigoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/miComunidadFragment"
         android:name="com.example.createrapp.MiComunidadFragment"
         android:label="fragment_mi_comunidad"
         tools:layout="@layout/fragment_mi_comunidad" />
+    <dialog
+        android:id="@+id/anyadirAmigoFragment"
+        android:name="com.example.createrapp.AnyadirAmigoFragment"
+        android:label="fragment_anyadir_amigo"
+        tools:layout="@layout/fragment_anyadir_amigo" />
 </navigation>

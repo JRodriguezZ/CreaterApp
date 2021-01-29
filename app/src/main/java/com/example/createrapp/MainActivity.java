@@ -31,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
                     || destination.getId() == R.id.inicioFragment
                     || destination.getId() == R.id.registroUsuarioFragment
                     || destination.getId() == R.id.loginFragment
-                    || destination.getId() == R.id.profileFragment) {
+                    || destination.getId() == R.id.profileFragment
+                    || destination.getId() == R.id.friendsFragment
+                    || destination.getId() == R.id.miComunidadFragment) {
                 binding.searchView.setVisibility(View.GONE);
             } else {
                 binding.searchView.setVisibility(View.VISIBLE);
@@ -40,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
             if (destination.getId() == R.id.profileFragment
                     || destination.getId() == R.id.inicioFragment
                     || destination.getId() == R.id.registroUsuarioFragment
-                    || destination.getId() == R.id.loginFragment) {
+                    || destination.getId() == R.id.loginFragment
+                    || destination.getId() == R.id.friendsFragment) {
                 binding.profilePicture.setVisibility(View.GONE);
             } else {
                 binding.profilePicture.setVisibility(View.VISIBLE);
@@ -49,7 +52,18 @@ public class MainActivity extends AppCompatActivity {
             if (destination.getId() == R.id.profileFragment
                     || destination.getId() == R.id.inicioFragment
                     || destination.getId() == R.id.registroUsuarioFragment
-                    || destination.getId() == R.id.loginFragment) {
+                    || destination.getId() == R.id.loginFragment
+                    || destination.getId() == R.id.friendsFragment) {
+                binding.friendTab.setVisibility(View.GONE);
+            } else {
+                binding.friendTab.setVisibility(View.VISIBLE);
+            }
+
+            if (destination.getId() == R.id.profileFragment
+                    || destination.getId() == R.id.inicioFragment
+                    || destination.getId() == R.id.registroUsuarioFragment
+                    || destination.getId() == R.id.loginFragment
+                    || destination.getId() == R.id.friendsFragment) {
                 binding.bottomNavView.setVisibility(View.GONE);
             } else {
                 binding.bottomNavView.setVisibility(View.VISIBLE);
@@ -62,7 +76,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        binding.friendTab.setOnClickListener(v -> {
+            navController.navigate(R.id.friendsFragment);
+        });
+
     }
-
-
 }

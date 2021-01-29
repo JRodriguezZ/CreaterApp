@@ -32,6 +32,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <ImageView
+        android:id="@+id/friendTab"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/profile_picture"
+        android:padding="5dp"
+        android:src="@drawable/ic_baseline_people_24"
+        app:layout_constraintBottom_toTopOf="@id/navigation_fragment"
+        app:layout_constraintEnd_toStartOf="@id/profilePicture"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
         android:layout_width="0dp"
@@ -39,8 +50,7 @@
         android:fadingEdge="horizontal"
         app:layout_constraintBottom_toTopOf="@id/navigation_fragment"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/profilePicture"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <androidx.fragment.app.FragmentContainerView

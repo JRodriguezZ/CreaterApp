@@ -51,7 +51,11 @@
         android:id="@+id/comunidadesFragment"
         android:name="com.example.createrapp.ComunidadesFragment"
         android:label="fragment_comunidades"
-        tools:layout="@layout/fragment_comunidades" />
+        tools:layout="@layout/fragment_comunidades" >
+        <action
+            android:id="@+id/action_comunidadesFragment_to_miComunidadFragment"
+            app:destination="@id/miComunidadFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nuevoDesafioFragment"
         android:name="com.example.createrapp.NuevoDesafioFragment"
@@ -95,4 +99,14 @@
             app:enterAnim="@anim/slide_in_bottom"
             app:exitAnim="@anim/slide_out_top" />
     </fragment>
+    <fragment
+        android:id="@+id/friendsFragment"
+        android:name="com.example.createrapp.FriendsFragment"
+        android:label="fragment_friends"
+        tools:layout="@layout/fragment_friends" />
+    <fragment
+        android:id="@+id/miComunidadFragment"
+        android:name="com.example.createrapp.MiComunidadFragment"
+        android:label="fragment_mi_comunidad"
+        tools:layout="@layout/fragment_mi_comunidad" />
 </navigation>

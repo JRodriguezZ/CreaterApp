@@ -10,9 +10,9 @@
         android:id="@+id/emptyListText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:text="Comienza a publicar ya pulsando el boton añadir!"
-        android:textSize="30sp"/>
+        android:textSize="30sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

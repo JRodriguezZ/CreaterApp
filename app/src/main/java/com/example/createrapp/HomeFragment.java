@@ -1,5 +1,6 @@
 package com.example.createrapp;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.adapter.FragmentViewHolder;
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -92,12 +94,13 @@ public class HomeFragment extends Fragment {
             holder.binding.descripcionDesafio.setText(desafio.descripcion);
             holder.binding.dificultadDesafio.setRating(desafio.dificultad);
 
-//            holder.itemView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    desafiosViewModel.seleccionar(desafio);
-//                    navController.navigate(R.id.action_mostrarDesafioFragment);
+//            holder.binding.likeDesafio.setOnTouchListener((v, event) -> {
+//                if(event.getAction() == MotionEvent.ACTION_BUTTON_PRESS) {
+//                    holder.binding.likeDesafio.setBackgroundColor(Color.GREEN);
+//                } else if(event.getAction() == MotionEvent.ACTION_BUTTON_RELEASE) {
+//                    holder.binding.likeDesafio.setBackgroundColor(Color.BLUE);
 //                }
+//                return false;
 //            });
         }
 

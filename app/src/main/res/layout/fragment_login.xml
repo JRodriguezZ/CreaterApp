@@ -27,13 +27,12 @@
             android:layout_height="match_parent">
 
 
-
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="128dp"
-                android:text="LOGIN"
+                android:layout_marginTop="85dp"
+                android:text="CREATER"
                 android:textColor="@color/black"
                 android:textSize="40dp"
                 android:textStyle="bold"
@@ -41,17 +40,30 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="La red social de skaters"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
             <EditText
                 android:id="@+id/nombreRegistro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="44dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
                 android:hint="Correo / Usuario"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
             <EditText
                 android:id="@+id/usuarioRegistro"
@@ -68,8 +80,8 @@
 
             <ImageView
                 android:id="@+id/googleIcon"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_marginStart="64dp"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/layout_bg_icons"
@@ -79,8 +91,8 @@
 
             <ImageView
                 android:id="@+id/facebookIcon"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_marginTop="32dp"
                 android:src="@drawable/icon_facebook"
                 app:layout_constraintEnd_toStartOf="@+id/registerIcon"
@@ -89,8 +101,8 @@
 
             <ImageView
                 android:id="@+id/registerIcon"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="64dp"
                 android:src="@drawable/layout_bg_icons"
@@ -114,6 +126,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="128dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginEnd="128dp"
                 android:layout_marginBottom="32dp"
                 android:text="LOGIN"

@@ -1,7 +1,10 @@
 package com.example.createrapp;
 
-import android.graphics.Color;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -9,19 +12,13 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-
-import com.bumptech.glide.Glide;
-import com.example.createrapp.databinding.FragmentInicioBinding;
 import com.example.createrapp.databinding.FragmentLoginBinding;
-
-import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginFragment extends Fragment {
     private FragmentLoginBinding binding;
+    private NavController navController;
+    private FirebaseAuth mAuth;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,9 +31,20 @@ public class LoginFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         NavController navController = Navigation.findNavController(view);
+        mAuth = FirebaseAuth.getInstance();
 
         binding.loginButton.setOnClickListener(v -> {
-            navController.navigate(R.id.action_loginFragment_to_inicioFragment);
+            String email = binding.usuarioLogin.getText().toString();
+            String password = binding.passwordLogin.getText().toString();
+
+            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
+               if (task.isSuccessful()) {
+                   navController.navigate(R.id.action_loginFragment_to_inicioFragment);
+               } else {
+                   Toast.makeText(requireContext(), task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+               }
+            });
+
         });
 
         binding.registerIcon.setOnClickListener(v -> {

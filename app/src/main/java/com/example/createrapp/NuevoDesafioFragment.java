@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.viewpager2.adapter.FragmentViewHolder;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +19,11 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.createrapp.databinding.FragmentNuevoDesafioBinding;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 
 public class NuevoDesafioFragment extends Fragment {
@@ -27,6 +31,8 @@ public class NuevoDesafioFragment extends Fragment {
     private FragmentNuevoDesafioBinding binding;
     private DesafiosViewModel desafiosViewModel;
     private Uri imagenSeleccionada;
+    private FirebaseFirestore firestore;
+    private FirebaseStorage storage;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -37,7 +43,8 @@ public class NuevoDesafioFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        desafiosViewModel = new ViewModelProvider(requireActivity()).get(DesafiosViewModel.class);
+        firestore = FirebaseFirestore.getInstance();
+
         NavController navController = Navigation.findNavController(view);
 
         binding.botonPublicarNuevoDesafio.setOnClickListener(v -> {
@@ -46,9 +53,8 @@ public class NuevoDesafioFragment extends Fragment {
                 String descripcion = binding.descripcionNuevoDesafio.getText().toString();
                 float dificultad = binding.dificultadNuevoDesafio.getRating();
 
-                desafiosViewModel.insertar(new Desafio(nombre, descripcion, dificultad, imagenSeleccionada.toString()));
-
-                desafiosViewModel.establecerImagenSeleccionada(null);
+                firestore.collection("desafios")
+                        .add(new Desafio(nombre, descripcion, dificultad, imagenSeleccionada.toString()));
 
                 navController.popBackStack();
 
@@ -72,6 +78,15 @@ public class NuevoDesafioFragment extends Fragment {
     }
 
     private final ActivityResultLauncher<String> lanzadorGaleria = registerForActivityResult(new ActivityResultContracts.GetContent(), uri -> {
+        storage.getReference("" + UUID.randomUUID())
+                .putFile(uri)
+                .continueWithTask(task -> task.getResult().getStorage().getDownloadUrl())
+                .addOnSuccessListener(uri1 -> {
+                    String fecha = LocalDateTime.now().toString();
+
+                    firestore.collection("desafios")
+                            .add()
+                })
         desafiosViewModel.establecerImagenSeleccionada(uri);
     });
 

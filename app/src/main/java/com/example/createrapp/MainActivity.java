@@ -1,5 +1,6 @@
 package com.example.createrapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -10,6 +11,7 @@ import android.view.View;
 
 import com.bumptech.glide.Glide;
 import com.example.createrapp.databinding.ActivityMainBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,10 +22,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView((binding = ActivityMainBinding.inflate(getLayoutInflater())).getRoot());
 
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+
         NavController navController = ((NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_fragment)).getNavController();
+
         NavigationUI.setupWithNavController(binding.bottomNavView, navController);
 
-        Glide.with(this).load(R.drawable.profile_picture_example).circleCrop().into(binding.profilePicture); /* Imagen de perfil redondeada */
+        auth.addAuthStateListener(firebaseAuth -> {
+            if(auth.getCurrentUser() != null) {
+                Glide.with(MainActivity.this).load(auth.getCurrentUser().getPhotoUrl()).circleCrop().into(binding.profilePicture); /* Imagen de perfil redondeada */
+            }
+        });
 
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
             if (destination.getId() == R.id.nuevoDesafioFragment
@@ -83,6 +92,5 @@ public class MainActivity extends AppCompatActivity {
         binding.friendTab.setOnClickListener(v -> {
             navController.navigate(R.id.friendsFragment);
         });
-
     }
 }

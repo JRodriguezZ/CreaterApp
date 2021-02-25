@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 import com.example.createrapp.databinding.FragmentProfileBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class ProfileFragment extends Fragment {
@@ -34,9 +35,13 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+
         navController = Navigation.findNavController(view);
 
-        Glide.with(this).load(R.drawable.profile_picture_example).circleCrop().into(binding.profilePicturePerfil); /* Imagen de perfil redondeada */
+        Glide.with(this).load(auth.getCurrentUser().getPhotoUrl()).circleCrop().into(binding.profilePicturePerfil); /* Imagen de perfil redondeada */
+
+        binding.nombrePerfil.setText(auth.getCurrentUser().getDisplayName());
 
         binding.backPerfil.setOnClickListener(v ->
                 navController.popBackStack()

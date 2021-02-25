@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import com.bumptech.glide.Glide;
 import com.example.createrapp.databinding.ActivityMainBinding;
 import com.example.createrapp.databinding.FragmentInicioBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class InicioFragment extends Fragment {
@@ -32,7 +33,9 @@ public class InicioFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Glide.with(this).load(R.drawable.profile_picture_example).circleCrop().into(binding.profilePictureInicio);
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+
+        Glide.with(this).load(auth.getCurrentUser().getPhotoUrl()).circleCrop().into(binding.profilePictureInicio);
         Glide.with(this).load(R.drawable.community_logo_example).circleCrop().into(binding.comunidadPictureInicio);
 
         navController = Navigation.findNavController(view);

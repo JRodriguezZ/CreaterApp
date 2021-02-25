@@ -34,8 +34,7 @@ public class HomeFragment extends Fragment {
     NavController navController;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return (binding = FragmentHomeBinding.inflate(inflater, container, false)).getRoot();
     }
 
@@ -61,7 +60,7 @@ public class HomeFragment extends Fragment {
 
     }
 
-    class DesafioViewHolder extends RecyclerView.ViewHolder {
+    static class DesafioViewHolder extends RecyclerView.ViewHolder {
         private final ViewholderDesafioBinding binding;
 
         public DesafioViewHolder(ViewholderDesafioBinding binding) {
@@ -87,6 +86,8 @@ public class HomeFragment extends Fragment {
         @Override
         public void onBindViewHolder(@NonNull DesafioViewHolder holder, int position) {
             Desafio desafio = desafios.get(position);
+
+
 
             Glide.with(holder.itemView).load(R.drawable.profile_picture_example).circleCrop().into(holder.binding.profilePictureDesafio);
             holder.binding.tituloDesafio.setText(desafio.titulo);

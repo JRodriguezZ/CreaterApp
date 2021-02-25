@@ -28,8 +28,7 @@ public class LoginFragment extends Fragment {
     private FirebaseAuth mAuth;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return (binding = FragmentLoginBinding.inflate(inflater, container, false)).getRoot();
     }
 
